@@ -6,13 +6,15 @@ using namespace std;
 pair<int, int> count_min(int a[], int n){
     if (n == 1) return pair < int , int > (a[0], 1);
     pair < int , int > res = count_min(a, n - 1);
-
+//    cout << "n = " << n << "-1 ===> " << res.first << ' ' << res.second << '\n';
+//    cout << res.first << ' ' << res.second << ' ' << a[n-1] << '\n';
     if (a[n - 1] < res.first) {
         res = pair < int , int > (a[n - 1], 1);
     }
 
     else if (a[n - 1] == res.first)
         res.second++;
+//    cout << n << ' ' << res.first << ' ' << res.second << '\n';
     return res;
 
 }
